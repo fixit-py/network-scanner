@@ -13,6 +13,6 @@ run python3 network_scanner.py -r or --range  "full ip range with CIDR notation"
 
 replace the "full ip range with CIDR notation" with the name of your ip range
 # ABOUT
-This python program scans your local network for all devices connected to the network compatible with both python 2 and python 3 specify the interface name using the -r or --range from the bash terminal or cmd. this script works on both linux, MAC and windows aslong as all the required exrenal libaries are downloaded and imported 
+This python program scans your local network for all devices connected to the network compatible with both python 2 and python 3 specify the interface name using the -r or --range from the bash terminal or cmd. this script works on both linux, MAC and windows as long as all the required external libaries are downloaded and imported 
 # module
 scapy , optparse(argparse)
