@@ -8,6 +8,7 @@ def get_arguments():
     if not options.target:
         parser.error("please enter an ip range")
     return options
+    
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)  # we create a object that represent an ARP packet and set the pdst to ip
     print(arp_request.summary()) # prints the summary of what the script does
@@ -24,8 +25,9 @@ def scan(ip):
         client_list.append (client_dict)
         print(element[1].psrc + "\t\t" + element[1].hwsrc) # to print the source ip address and source MAC address of the packet
     return client_list
+    
 def print_result(result_list):
-    print ("IP\t\t\tMAC ADDRESS\n --------------------------------")
+    print ("IP\t\t\tMAC ADDRESS\n -------------------------------------------------")
     for client in result_list:
         print(client["ip"] + "\t\t" + client["MAC"])
 options = get_arguments()
