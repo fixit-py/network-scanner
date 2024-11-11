@@ -1,0 +1,15 @@
+import scapy.all as s
+
+def custom_ping(target_ip, count=4):
+    print(f"Pinging {target_ip} with {count} packets:")
+    
+    for i in range(count):
+        packet = s.IP(dst=target_ip) / s.ICMP()
+        response = s.sr1(packet, timeout=1, verbose=False)
+        
+        if response:
+            print(f"Reply from {target_ip}: bytes={len(response)} ttl={response.ttl} time={response.time*1000:.2f}ms")
+        else:
+            print(f"Request timed out for icmp_seq={i+1}")
+
+custom_ping("8.8.8.8")
